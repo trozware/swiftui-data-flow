@@ -39,7 +39,7 @@ struct PizzaNamePicker: View {
     @Binding var selectedPizzaName: PizzaName
 
     var body: some View {
-        Section(header: Text("Select your pizza:")  .font(.headline)) {
+        Section(header: Text("Select your pizza:").font(.headline)) {
             List(PizzaName.allCases, id: \.self) { pizzaName in
                 Button(action: { self.selectedPizzaName = pizzaName }) {
                     PizzaNamePickerRow(selectedPizzaName: self.$selectedPizzaName,
