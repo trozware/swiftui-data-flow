@@ -13,6 +13,8 @@
 		263DF0B3232C7F41007635A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263DF0B2232C7F41007635A4 /* Assets.xcassets */; };
 		263DF0B6232C7F41007635A4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 263DF0B5232C7F41007635A4 /* Preview Assets.xcassets */; };
 		263DF0B9232C7F41007635A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */; };
+		263DF0C1232C991E007635A4 /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0C0232C991E007635A4 /* PizzaView.swift */; };
+		263DF0C3232C994B007635A4 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0C2232C994B007635A4 /* Pizza.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		263DF0B5232C7F41007635A4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		263DF0B8232C7F41007635A4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		263DF0BA232C7F41007635A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		263DF0C0232C991E007635A4 /* PizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
+		263DF0C2232C994B007635A4 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,8 @@
 				263DF0AC232C7F3E007635A4 /* AppDelegate.swift */,
 				263DF0AE232C7F3E007635A4 /* SceneDelegate.swift */,
 				263DF0B0232C7F3E007635A4 /* ContentView.swift */,
+				263DF0C0232C991E007635A4 /* PizzaView.swift */,
+				263DF0C2232C994B007635A4 /* Pizza.swift */,
 				263DF0B2232C7F41007635A4 /* Assets.xcassets */,
 				263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */,
 				263DF0BA232C7F41007635A4 /* Info.plist */,
@@ -149,6 +155,8 @@
 				263DF0AD232C7F3E007635A4 /* AppDelegate.swift in Sources */,
 				263DF0AF232C7F3E007635A4 /* SceneDelegate.swift in Sources */,
 				263DF0B1232C7F3E007635A4 /* ContentView.swift in Sources */,
+				263DF0C3232C994B007635A4 /* Pizza.swift in Sources */,
+				263DF0C1232C991E007635A4 /* PizzaView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
