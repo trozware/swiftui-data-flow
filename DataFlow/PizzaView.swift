@@ -8,7 +8,6 @@
 
 import SwiftUI
 
-
 struct PizzaView: View {
     @State private var pizza = Pizza()
 
@@ -17,31 +16,15 @@ struct PizzaView: View {
             VStack {
                 Form {
                     PizzaNamePicker(selectedPizzaName: $pizza.name)
-
-                    Section(header: Text("Select your size:").font(.headline)) {
-                        Picker(selection: $pizza.size, label: Text("Pizza Size")) {
-                            ForEach(PizzaSize.allCases, id: \.self) { pizzaSize in
-                                Text(pizzaSize.rawValue.capitalized).tag(pizzaSize)
-                            }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                    }
-
-                    Section(header: Text("Select your crust:").font(.headline)) {
-                        Picker(selection: $pizza.crust, label: Text("Pizza Crust")) {
-                            ForEach(PizzaCrust.allCases, id: \.self) { pizzaCrust in
-                                Text(pizzaCrust.rawValue.capitalized).tag(pizzaCrust)
-                            }
-                        }
-                        .pickerStyle(SegmentedPickerStyle())
-                    }
+                    PizzaSizePicker(selectedPizzaSize: $pizza.size)
+                    PizzaCrustPicker(selectedPizzaCrust: $pizza.crust)
                 }
 
                 Text(pizza.pizzaSelection)
                     .padding()
                     .multilineTextAlignment(.center)
             }
-            .navigationBarTitle("Choose your Pizza")
+            .navigationBarTitle("Choose Your Pizza")
         }
     }
 }
@@ -59,16 +42,56 @@ struct PizzaNamePicker: View {
         Section(header: Text("Select your pizza:")  .font(.headline)) {
             List(PizzaName.allCases, id: \.self) { pizzaName in
                 Button(action: { self.selectedPizzaName = pizzaName }) {
-                    HStack {
-                        Text(pizzaName.rawValue.capitalized)
-                        Spacer()
-                        if pizzaName == self.selectedPizzaName {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                    .foregroundColor(.primary)
+                    PizzaNamePickerRow(selectedPizzaName: self.$selectedPizzaName,
+                                       pizzaName: pizzaName)
                 }
             }
+        }
+    }
+}
+
+struct PizzaNamePickerRow: View {
+    @Binding var selectedPizzaName: PizzaName
+    let pizzaName: PizzaName
+
+    var body: some View {
+        HStack {
+            Text(pizzaName.rawValue.capitalized)
+            Spacer()
+            if pizzaName == self.selectedPizzaName {
+                Image(systemName: "checkmark")
+            }
+        }
+        .foregroundColor(.primary)
+    }
+}
+
+struct PizzaSizePicker: View {
+    @Binding var selectedPizzaSize: PizzaSize
+
+    var body: some View {
+        Section(header: Text("Select your size:").font(.headline)) {
+            Picker(selection: $selectedPizzaSize, label: Text("Pizza Size")) {
+                ForEach(PizzaSize.allCases, id: \.self) { pizzaSize in
+                    Text(pizzaSize.rawValue.capitalized).tag(pizzaSize)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
+        }
+    }
+}
+
+struct PizzaCrustPicker: View {
+    @Binding var selectedPizzaCrust: PizzaCrust
+
+    var body: some View {
+        Section(header: Text("Select your crust:").font(.headline)) {
+            Picker(selection: $selectedPizzaCrust, label: Text("Pizza Crust")) {
+                ForEach(PizzaCrust.allCases, id: \.self) { pizzaCrust in
+                    Text(pizzaCrust.rawValue.capitalized).tag(pizzaCrust)
+                }
+            }
+            .pickerStyle(SegmentedPickerStyle())
         }
     }
 }
