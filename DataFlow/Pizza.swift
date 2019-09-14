@@ -8,6 +8,9 @@
 
 import Foundation
 
+// Pizza model based on enums for each property
+// All CaseIterable so they can be looped through to create the UI
+
 struct Pizza {
     var name: PizzaName = .magharita
     var size: PizzaSize = .medium
@@ -29,4 +32,3 @@ enum PizzaSize: String, CaseIterable {
 enum PizzaCrust: String, CaseIterable {
     case thin, standard, deeppan = "deep pan"
 }
-

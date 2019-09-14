@@ -9,17 +9,22 @@
 import SwiftUI
 
 struct PizzaView: View {
+    // Using @State for s struct
     @State private var pizza = Pizza()
 
     var body: some View {
         NavigationView {
             VStack {
                 Form {
+                    // Using 2-way binding but each component
+                    // only needs 1 property from the struct
                     PizzaNamePicker(selectedPizzaName: $pizza.name)
                     PizzaSizePicker(selectedPizzaSize: $pizza.size)
                     PizzaCrustPicker(selectedPizzaCrust: $pizza.crust)
                 }
 
+                // Text representation to prove that the
+                // subviews are modifying the parent struct
                 Text(pizza.pizzaSelection)
                     .padding()
                     .multilineTextAlignment(.center)
@@ -51,6 +56,10 @@ struct PizzaNamePicker: View {
 }
 
 struct PizzaNamePickerRow: View {
+    // sub-subview for the pizza name row
+    // still using 2-way binding for the selected pizza name
+    // and gets a property for the name to display
+    
     @Binding var selectedPizzaName: PizzaName
     let pizzaName: PizzaName
 

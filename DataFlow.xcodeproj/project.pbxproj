@@ -15,7 +15,7 @@
 		263DF0B9232C7F41007635A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */; };
 		263DF0C1232C991E007635A4 /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0C0232C991E007635A4 /* PizzaView.swift */; };
 		263DF0C3232C994B007635A4 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0C2232C994B007635A4 /* Pizza.swift */; };
-		264C426D232CD3EE00058CE0 /* PersonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426C232CD3EE00058CE0 /* PersonList.swift */; };
+		264C426D232CD3EE00058CE0 /* PersonsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426C232CD3EE00058CE0 /* PersonsModel.swift */; };
 		264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426E232CD57D00058CE0 /* PersonListView.swift */; };
 		264C4271232CD87900058CE0 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C4270232CD87900058CE0 /* PersonDetailView.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 		263DF0BA232C7F41007635A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263DF0C0232C991E007635A4 /* PizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
 		263DF0C2232C994B007635A4 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
-		264C426C232CD3EE00058CE0 /* PersonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonList.swift; sourceTree = "<group>"; };
+		264C426C232CD3EE00058CE0 /* PersonsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonsModel.swift; sourceTree = "<group>"; };
 		264C426E232CD57D00058CE0 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		264C4270232CD87900058CE0 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,7 +73,7 @@
 				263DF0C2232C994B007635A4 /* Pizza.swift */,
 				264C426E232CD57D00058CE0 /* PersonListView.swift */,
 				264C4270232CD87900058CE0 /* PersonDetailView.swift */,
-				264C426C232CD3EE00058CE0 /* PersonList.swift */,
+				264C426C232CD3EE00058CE0 /* PersonsModel.swift */,
 				263DF0B2232C7F41007635A4 /* Assets.xcassets */,
 				263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */,
 				263DF0BA232C7F41007635A4 /* Info.plist */,
@@ -161,7 +161,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				264C426D232CD3EE00058CE0 /* PersonList.swift in Sources */,
+				264C426D232CD3EE00058CE0 /* PersonsModel.swift in Sources */,
 				263DF0AD232C7F3E007635A4 /* AppDelegate.swift in Sources */,
 				264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */,
 				263DF0AF232C7F3E007635A4 /* SceneDelegate.swift in Sources */,
