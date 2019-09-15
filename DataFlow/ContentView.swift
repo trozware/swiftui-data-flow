@@ -8,6 +8,10 @@
 
 import SwiftUI
 
+// For demo purposes, it would be neat to make this a tab view
+// then link to each of the main sample views
+
+
 struct ContentView: View {
     // Property
     let greeting = "Hello from SwiftUI!"

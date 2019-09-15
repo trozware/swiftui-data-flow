@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2628DB08232DE93000049FFD /* UserSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628DB07232DE93000049FFD /* UserSettings.swift */; };
+		2628DB0A232DE94D00049FFD /* CustomModifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2628DB09232DE94D00049FFD /* CustomModifiers.swift */; };
 		263DF0AD232C7F3E007635A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0AC232C7F3E007635A4 /* AppDelegate.swift */; };
 		263DF0AF232C7F3E007635A4 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0AE232C7F3E007635A4 /* SceneDelegate.swift */; };
 		263DF0B1232C7F3E007635A4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0B0232C7F3E007635A4 /* ContentView.swift */; };
@@ -18,9 +20,14 @@
 		264C426D232CD3EE00058CE0 /* PersonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426C232CD3EE00058CE0 /* PersonListModel.swift */; };
 		264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426E232CD57D00058CE0 /* PersonListView.swift */; };
 		264C4271232CD87900058CE0 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C4270232CD87900058CE0 /* PersonDetailView.swift */; };
+		26BDC7DD232DD34200C0A2D9 /* NestingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC7DC232DD34200C0A2D9 /* NestingViews.swift */; };
+		26BDC7DF232DE63900C0A2D9 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC7DE232DE63900C0A2D9 /* ChildView.swift */; };
+		26BDC7E1232DE6CE00C0A2D9 /* GrandChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC7E0232DE6CE00C0A2D9 /* GrandChildView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2628DB07232DE93000049FFD /* UserSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSettings.swift; sourceTree = "<group>"; };
+		2628DB09232DE94D00049FFD /* CustomModifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomModifiers.swift; sourceTree = "<group>"; };
 		263DF0A9232C7F3E007635A4 /* DataFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DataFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		263DF0AC232C7F3E007635A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		263DF0AE232C7F3E007635A4 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +41,9 @@
 		264C426C232CD3EE00058CE0 /* PersonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListModel.swift; sourceTree = "<group>"; };
 		264C426E232CD57D00058CE0 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		264C4270232CD87900058CE0 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		26BDC7DC232DD34200C0A2D9 /* NestingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestingViews.swift; sourceTree = "<group>"; };
+		26BDC7DE232DE63900C0A2D9 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
+		26BDC7E0232DE6CE00C0A2D9 /* GrandChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandChildView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +81,7 @@
 				263DF0B0232C7F3E007635A4 /* ContentView.swift */,
 				26BDC7D9232DB93900C0A2D9 /* State & Binding */,
 				26BDC7DA232DB94C00C0A2D9 /* Observable */,
+				26BDC7DB232DD32E00C0A2D9 /* Environment */,
 				263DF0B2232C7F41007635A4 /* Assets.xcassets */,
 				263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */,
 				263DF0BA232C7F41007635A4 /* Info.plist */,
@@ -104,6 +115,18 @@
 				264C426C232CD3EE00058CE0 /* PersonListModel.swift */,
 			);
 			path = Observable;
+			sourceTree = "<group>";
+		};
+		26BDC7DB232DD32E00C0A2D9 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				26BDC7DC232DD34200C0A2D9 /* NestingViews.swift */,
+				26BDC7DE232DE63900C0A2D9 /* ChildView.swift */,
+				26BDC7E0232DE6CE00C0A2D9 /* GrandChildView.swift */,
+				2628DB07232DE93000049FFD /* UserSettings.swift */,
+				2628DB09232DE94D00049FFD /* CustomModifiers.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,13 +201,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				264C426D232CD3EE00058CE0 /* PersonListModel.swift in Sources */,
+				2628DB08232DE93000049FFD /* UserSettings.swift in Sources */,
+				26BDC7DD232DD34200C0A2D9 /* NestingViews.swift in Sources */,
+				26BDC7E1232DE6CE00C0A2D9 /* GrandChildView.swift in Sources */,
 				263DF0AD232C7F3E007635A4 /* AppDelegate.swift in Sources */,
 				264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */,
 				263DF0AF232C7F3E007635A4 /* SceneDelegate.swift in Sources */,
 				263DF0B1232C7F3E007635A4 /* ContentView.swift in Sources */,
+				2628DB0A232DE94D00049FFD /* CustomModifiers.swift in Sources */,
 				263DF0C3232C994B007635A4 /* Pizza.swift in Sources */,
 				264C4271232CD87900058CE0 /* PersonDetailView.swift in Sources */,
 				263DF0C1232C991E007635A4 /* PizzaView.swift in Sources */,
+				26BDC7DF232DE63900C0A2D9 /* ChildView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
