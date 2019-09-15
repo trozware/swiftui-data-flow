@@ -69,11 +69,8 @@
 				263DF0AC232C7F3E007635A4 /* AppDelegate.swift */,
 				263DF0AE232C7F3E007635A4 /* SceneDelegate.swift */,
 				263DF0B0232C7F3E007635A4 /* ContentView.swift */,
-				263DF0C0232C991E007635A4 /* PizzaView.swift */,
-				263DF0C2232C994B007635A4 /* Pizza.swift */,
-				264C426E232CD57D00058CE0 /* PersonListView.swift */,
-				264C4270232CD87900058CE0 /* PersonDetailView.swift */,
-				264C426C232CD3EE00058CE0 /* PersonsModel.swift */,
+				26BDC7D9232DB93900C0A2D9 /* State & Binding */,
+				26BDC7DA232DB94C00C0A2D9 /* Observable */,
 				263DF0B2232C7F41007635A4 /* Assets.xcassets */,
 				263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */,
 				263DF0BA232C7F41007635A4 /* Info.plist */,
@@ -88,6 +85,25 @@
 				263DF0B5232C7F41007635A4 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		26BDC7D9232DB93900C0A2D9 /* State & Binding */ = {
+			isa = PBXGroup;
+			children = (
+				263DF0C0232C991E007635A4 /* PizzaView.swift */,
+				263DF0C2232C994B007635A4 /* Pizza.swift */,
+			);
+			path = "State & Binding";
+			sourceTree = "<group>";
+		};
+		26BDC7DA232DB94C00C0A2D9 /* Observable */ = {
+			isa = PBXGroup;
+			children = (
+				264C426E232CD57D00058CE0 /* PersonListView.swift */,
+				264C4270232CD87900058CE0 /* PersonDetailView.swift */,
+				264C426C232CD3EE00058CE0 /* PersonsModel.swift */,
+			);
+			path = Observable;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

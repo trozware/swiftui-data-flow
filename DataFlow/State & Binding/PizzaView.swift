@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct PizzaView: View {
-    // Using @State for s struct
+    // Using @State for a struct
     @State private var pizza = Pizza()
 
     var body: some View {
