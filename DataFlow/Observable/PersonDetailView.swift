@@ -9,9 +9,13 @@
 import SwiftUI
 
 struct PersonDetailView: View {
+    // Data passed from parent list view
     @Binding var person: PersonViewModel
 
-    var body: some View {
+    // SwiftUI form with data fields
+    // note the autocapitalization and keyboard modifiers
+
+     var body: some View {
         VStack {
             Form {
                 Section(header: Text("First Name")) {
@@ -40,11 +44,23 @@ struct PersonDetailView: View {
                 }
             }
 
-            Text("\(person.first) \(person.last)")
+            Text("Registered on:")
+                .font(.headline)
+                .padding(6)
+            Text("\(person.registered, formatter: dateFormatter)")
         }
     }
+
+    // Formatter for registration date
+    var dateFormatter: DateFormatter {
+         let df = DateFormatter()
+         df.timeStyle = .short
+         df.dateStyle = .long
+         return df
+     }
 }
 
+// Previewing requires using .constant to convert the data to a binding
 struct PersonDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let person = PersonViewModel.samplePerson()

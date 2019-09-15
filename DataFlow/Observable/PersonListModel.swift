@@ -8,8 +8,10 @@
 
 import Foundation
 
-class PersonsModel: ObservableObject {
-
+class PersonListModel: ObservableObject {
+    // Main list view model
+    // ObservableObject so that updates are detected
+    
     @Published var persons: [PersonViewModel] = []
 
     func fetchData() {
@@ -44,6 +46,9 @@ class PersonsModel: ObservableObject {
 class PersonViewModel: Identifiable, ObservableObject {
     // Main model for use as ObservableObject
     // Derived from JSON via basic model
+
+    // Even though this is not observed directly,
+    // it must be an ObservableObject for the data flow to work
 
     var id = UUID()
     @Published var first: String = ""

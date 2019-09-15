@@ -9,11 +9,15 @@
 import SwiftUI
 
 struct PersonListView: View {
-    @ObservedObject var personList = PersonsModel()
+    // Using an ObservedObject for reference-based data (classes)
+    @ObservedObject var personList = PersonListModel()
 
     var body: some View {
         NavigationView {
             List {
+                // To make the navigation link edits return to here,
+                // the data sent must be a direct link to the ObservedObject
+                
                 ForEach(personList.persons.indices, id: \.self) { index in
                     NavigationLink(destination:
                         PersonDetailView(person: self.$personList.persons[index])
@@ -22,18 +26,24 @@ struct PersonListView: View {
                     }
                 }
                 .onDelete { indexSet in
+                    // add this modifier to allow deleting from the list
                     self.personList.persons.remove(atOffsets: indexSet)
                 }
                 .onMove { indecies, newOffset in
+                    // add this modifier to allow moving in the list
                     self.personList.persons.move(fromOffsets: indecies, toOffset: newOffset)
                 }
             }
-            .onAppear(perform: { self.personList.fetchData() })
 
-            .navigationBarTitle("People")
-            .navigationBarItems(leading: Button(action: { self.personList.fetchData() }) {
-                Image(systemName: "arrow.clockwise")
-            }, trailing: EditButton())
+                // This runs when the view appears to load the initial data
+                .onAppear(perform: { self.personList.fetchData() })
+
+                // set up the navigation bar details
+                // EditButton() is a standard View
+                .navigationBarTitle("People")
+                .navigationBarItems(leading: Button(action: { self.personList.fetchData() }) {
+                    Image(systemName: "arrow.clockwise")
+                }, trailing: EditButton())
         }
     }
 
