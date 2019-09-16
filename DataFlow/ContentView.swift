@@ -8,32 +8,37 @@
 
 import SwiftUI
 
-// For demo purposes, it would be neat to make this a tab view
-// then link to each of the main sample views
-
-
 struct ContentView: View {
-    // Property
-    let greeting = "Hello from SwiftUI!"
-
-    // State
-    @State private var toggleValue = true
-    @State private var stepperValue = 0
+    @State private var tabSelection = 0
 
     var body: some View {
-        VStack {
-            // Using property directly
-            Text(greeting)
-                .font(.title)
+        NavigationView {
+            List {
+                NavigationLink(destination: Property()) {
+                    ListContents(title: "Property", imageNumber: 1)
+                }
 
-            // Using state with 2-way binding
-            Toggle(isOn: $toggleValue) {
-                Text("Toggle is \(self.toggleValue ? "ON" : "OFF")")
+                NavigationLink(destination: UsingState()) {
+                    ListContents(title: "@State", imageNumber: 2)
+                }
+
+                NavigationLink(destination: Numbers()) {
+                    ListContents(title: "@State & @Binding 1", imageNumber: 3)
+                }
+
+                NavigationLink(destination: PizzaView()) {
+                    ListContents(title: "@State & @Binding 2", imageNumber: 4)
+                }
+
+                NavigationLink(destination: PersonListView()) {
+                    ListContents(title: "@ObservableObject", imageNumber: 5)
+                }
+
+                NavigationLink(destination: NestingViews().environmentObject(UserSettings())) {
+                    ListContents(title: "@EnvironmentObject", imageNumber: 6)
+                }
             }
-            .padding()
-
-            // Using state with 2-way binding
-            NumberChooser(stepperValue: $stepperValue)
+            .navigationBarTitle("Examples")
         }
     }
 }
@@ -44,40 +49,17 @@ struct ContentView_Previews: PreviewProvider {
     }
 }
 
-struct NumberChooser: View {
-    // Using state from parent with 2-way binding
-    @Binding var stepperValue: Int
+struct ListContents: View {
+    let title: String
+    let imageNumber: Int
 
     var body: some View {
-        ZStack {
-            RoundedRectangle(cornerRadius: 15)
-                .fill(Color.init(red: 0.95, green: 0.95, blue: 0.95))
-
-            VStack {
-                // Using bound state from parent with 2-way binding
-                Stepper(value: $stepperValue, in: 0...20) {
-                    Text("Value = \(stepperValue)")
-                }
+        HStack {
+            Image(systemName: "\(imageNumber).square")
                 .padding()
-
-                // Using bound state from parent as property
-                // this view cannot change the value
-                NumberBlock(stepperValue: stepperValue)
-            }
+                .font(.largeTitle)
+            Text(title)
+                .font(.headline)
         }
-        .padding()
     }
 }
-
-struct NumberBlock: View {
-    // As this view never changes the value, there is no need to bind it
-    var stepperValue: Int
-
-    var body: some View {
-        Image(systemName: "\(stepperValue).square")
-            .font(.system(size: 100))
-            .foregroundColor(.blue)
-            .padding(.bottom, 20)
-    }
-}
-

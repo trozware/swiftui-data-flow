@@ -13,7 +13,6 @@ struct PizzaView: View {
     @State private var pizza = Pizza()
 
     var body: some View {
-        NavigationView {
             VStack {
                 Form {
                     // Using 2-way binding but each component
@@ -30,7 +29,6 @@ struct PizzaView: View {
                     .multilineTextAlignment(.center)
             }
             .navigationBarTitle("Choose Your Pizza")
-        }
     }
 }
 

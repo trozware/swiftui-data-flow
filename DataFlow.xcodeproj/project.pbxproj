@@ -17,6 +17,9 @@
 		263DF0B9232C7F41007635A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 263DF0B7232C7F41007635A4 /* LaunchScreen.storyboard */; };
 		263DF0C1232C991E007635A4 /* PizzaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0C0232C991E007635A4 /* PizzaView.swift */; };
 		263DF0C3232C994B007635A4 /* Pizza.swift in Sources */ = {isa = PBXBuildFile; fileRef = 263DF0C2232C994B007635A4 /* Pizza.swift */; };
+		264663C2232EFC4200368113 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264663C1232EFC4200368113 /* Property.swift */; };
+		264663C4232EFD5300368113 /* UsingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264663C3232EFD5300368113 /* UsingState.swift */; };
+		264663C7232EFF3B00368113 /* Numbers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264663C6232EFF3B00368113 /* Numbers.swift */; };
 		264C426D232CD3EE00058CE0 /* PersonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426C232CD3EE00058CE0 /* PersonListModel.swift */; };
 		264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426E232CD57D00058CE0 /* PersonListView.swift */; };
 		264C4271232CD87900058CE0 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C4270232CD87900058CE0 /* PersonDetailView.swift */; };
@@ -38,6 +41,9 @@
 		263DF0BA232C7F41007635A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		263DF0C0232C991E007635A4 /* PizzaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PizzaView.swift; sourceTree = "<group>"; };
 		263DF0C2232C994B007635A4 /* Pizza.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pizza.swift; sourceTree = "<group>"; };
+		264663C1232EFC4200368113 /* Property.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
+		264663C3232EFD5300368113 /* UsingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingState.swift; sourceTree = "<group>"; };
+		264663C6232EFF3B00368113 /* Numbers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Numbers.swift; sourceTree = "<group>"; };
 		264C426C232CD3EE00058CE0 /* PersonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListModel.swift; sourceTree = "<group>"; };
 		264C426E232CD57D00058CE0 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		264C4270232CD87900058CE0 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
@@ -79,7 +85,10 @@
 				263DF0AC232C7F3E007635A4 /* AppDelegate.swift */,
 				263DF0AE232C7F3E007635A4 /* SceneDelegate.swift */,
 				263DF0B0232C7F3E007635A4 /* ContentView.swift */,
-				26BDC7D9232DB93900C0A2D9 /* State & Binding */,
+				264663C1232EFC4200368113 /* Property.swift */,
+				264663C3232EFD5300368113 /* UsingState.swift */,
+				264663C5232EFF2300368113 /* State & Binding 1 */,
+				26BDC7D9232DB93900C0A2D9 /* State & Binding 2 */,
 				26BDC7DA232DB94C00C0A2D9 /* Observable */,
 				26BDC7DB232DD32E00C0A2D9 /* Environment */,
 				263DF0B2232C7F41007635A4 /* Assets.xcassets */,
@@ -98,13 +107,21 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		26BDC7D9232DB93900C0A2D9 /* State & Binding */ = {
+		264663C5232EFF2300368113 /* State & Binding 1 */ = {
+			isa = PBXGroup;
+			children = (
+				264663C6232EFF3B00368113 /* Numbers.swift */,
+			);
+			path = "State & Binding 1";
+			sourceTree = "<group>";
+		};
+		26BDC7D9232DB93900C0A2D9 /* State & Binding 2 */ = {
 			isa = PBXGroup;
 			children = (
 				263DF0C0232C991E007635A4 /* PizzaView.swift */,
 				263DF0C2232C994B007635A4 /* Pizza.swift */,
 			);
-			path = "State & Binding";
+			path = "State & Binding 2";
 			sourceTree = "<group>";
 		};
 		26BDC7DA232DB94C00C0A2D9 /* Observable */ = {
@@ -200,9 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				264663C2232EFC4200368113 /* Property.swift in Sources */,
 				264C426D232CD3EE00058CE0 /* PersonListModel.swift in Sources */,
 				2628DB08232DE93000049FFD /* UserSettings.swift in Sources */,
 				26BDC7DD232DD34200C0A2D9 /* NestingViews.swift in Sources */,
+				264663C7232EFF3B00368113 /* Numbers.swift in Sources */,
+				264663C4232EFD5300368113 /* UsingState.swift in Sources */,
 				26BDC7E1232DE6CE00C0A2D9 /* GrandChildView.swift in Sources */,
 				263DF0AD232C7F3E007635A4 /* AppDelegate.swift in Sources */,
 				264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */,

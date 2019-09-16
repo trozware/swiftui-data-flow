@@ -13,7 +13,10 @@ struct PersonListView: View {
     @ObservedObject var personList = PersonListModel()
 
     var body: some View {
-        NavigationView {
+        // Embed in NavigationView to test in isolation
+        // Getting here through ContentView provides the master NavView
+
+        // NavigationView {
             List {
                 // To make the navigation link edits return to here,
                 // the data sent must be a direct link to the ObservedObject
@@ -41,12 +44,9 @@ struct PersonListView: View {
                 // set up the navigation bar details
                 // EditButton() is a standard View
                 .navigationBarTitle("People")
-                .navigationBarItems(leading: Button(action: { self.personList.fetchData() }) {
-                    Image(systemName: "arrow.clockwise")
-                }, trailing: EditButton())
-        }
+                .navigationBarItems(trailing: EditButton())
+        // }
     }
-
 }
 
 struct PersonList_Previews: PreviewProvider {
