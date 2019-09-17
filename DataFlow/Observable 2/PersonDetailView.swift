@@ -15,7 +15,7 @@ struct PersonDetailView: View {
     // SwiftUI form with data fields
     // note the autocapitalization and keyboard modifiers
 
-     var body: some View {
+    var body: some View {
         VStack {
             Form {
                 Section(header: Text("First Name")) {
@@ -37,9 +37,9 @@ struct PersonDetailView: View {
                     TextField("Address", text: $person.address)
                         .autocapitalization(.words)
                     TextField("City", text: $person.city)
-                         .autocapitalization(.words)
+                        .autocapitalization(.words)
                     TextField("State", text: $person.state)
-                         .autocapitalization(.words)
+                        .autocapitalization(.words)
                     TextField("Zip", text: $person.zip)
                 }
             }
@@ -53,11 +53,11 @@ struct PersonDetailView: View {
 
     // Formatter for registration date
     var dateFormatter: DateFormatter {
-         let df = DateFormatter()
-         df.timeStyle = .short
-         df.dateStyle = .long
-         return df
-     }
+        let df = DateFormatter()
+        df.timeStyle = .short
+        df.dateStyle = .long
+        return df
+    }
 }
 
 // Previewing requires using .constant to convert the data to a binding

@@ -30,13 +30,14 @@ struct NumberChooser: View {
         ZStack {
             RoundedRectangle(cornerRadius: 15)
                 .fill(Color.init(red: 0.95, green: 0.95, blue: 0.95))
+                .frame(height: 300)
 
             VStack {
                 // Using bound state from parent with 2-way binding
                 Stepper(value: $stepperValue, in: 0...20) {
                     Text("Value = \(stepperValue)")
                 }
-                .padding()
+                .padding(50)
 
                 // Using bound state from parent as property
                 // this view cannot change the value

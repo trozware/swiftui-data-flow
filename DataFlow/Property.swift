@@ -14,8 +14,8 @@ struct Property: View {
 
     var body: some View {
         // Using property directly
-         Text(greeting)
-             .font(.title)
+        Text(greeting)
+            .font(.title)
     }
 }
 

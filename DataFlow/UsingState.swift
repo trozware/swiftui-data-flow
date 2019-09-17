@@ -13,10 +13,10 @@ struct UsingState: View {
 
     var body: some View {
         // Using state with 2-way binding
-         Toggle(isOn: $toggleValue) {
-             Text("Toggle is \(self.toggleValue ? "ON" : "OFF")")
-         }
-         .padding(50)
+        Toggle(isOn: $toggleValue) {
+            Text("Toggle is \(self.toggleValue ? "ON" : "OFF")")
+        }
+        .padding(50)
     }
 }
 

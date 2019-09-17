@@ -31,6 +31,8 @@ struct NestingViews: View {
                         : Text("Log In").modifier(ButtonStyle())
                 }
 
+                Spacer()
+                
                 // display first nested view
                 ChildView()
             }

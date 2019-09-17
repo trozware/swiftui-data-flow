@@ -13,22 +13,22 @@ struct PizzaView: View {
     @State private var pizza = Pizza()
 
     var body: some View {
-            VStack {
-                Form {
-                    // Using 2-way binding but each component
-                    // only needs 1 property from the struct
-                    PizzaNamePicker(selectedPizzaName: $pizza.name)
-                    PizzaSizePicker(selectedPizzaSize: $pizza.size)
-                    PizzaCrustPicker(selectedPizzaCrust: $pizza.crust)
-                }
-
-                // Text representation to prove that the
-                // subviews are modifying the parent struct
-                Text(pizza.pizzaSelection)
-                    .padding()
-                    .multilineTextAlignment(.center)
+        VStack {
+            Form {
+                // Using 2-way binding but each component
+                // only needs 1 property from the struct
+                PizzaNamePicker(selectedPizzaName: $pizza.name)
+                PizzaSizePicker(selectedPizzaSize: $pizza.size)
+                PizzaCrustPicker(selectedPizzaCrust: $pizza.crust)
             }
-            .navigationBarTitle("Choose Your Pizza")
+
+            // Text representation to prove that the
+            // subviews are modifying the parent struct
+            Text(pizza.pizzaSelection)
+                .padding()
+                .multilineTextAlignment(.center)
+        }
+        .navigationBarTitle("Choose Your Pizza")
     }
 }
 

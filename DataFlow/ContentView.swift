@@ -30,10 +30,14 @@ struct ContentView: View {
                     ListContents(title: "@State & @Binding 2", imageNumber: 4)
                 }
 
-                NavigationLink(destination: PersonListView()) {
-                    ListContents(title: "@ObservableObject", imageNumber: 5)
+                NavigationLink(destination: ColorSetView()) {
+                    ListContents(title: "ObservableObject 1", imageNumber: 5)
                 }
 
+                NavigationLink(destination: PersonListView()) {
+                    ListContents(title: "ObservableObject 2", imageNumber: 5)
+                }
+                
                 NavigationLink(destination: NestingViews().environmentObject(UserSettings())) {
                     ListContents(title: "@EnvironmentObject", imageNumber: 6)
                 }

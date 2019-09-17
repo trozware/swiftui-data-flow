@@ -15,6 +15,9 @@ class PersonListModel: ObservableObject {
     @Published var persons: [PersonViewModel] = []
 
     func fetchData() {
+        // avoid too many calls to the API
+        if persons.count > 0 { return }
+
         let address = "https://next.json-generator.com/api/json/get/VyQroKB8P?indent=2"
         guard let url = URL(string: address) else {
             fatalError("Bad data URL!")
@@ -40,6 +43,11 @@ class PersonListModel: ObservableObject {
                 print(error)
             }
         }.resume()
+    }
+
+    func refreshData() {
+        persons = []
+        fetchData()
     }
 }
 

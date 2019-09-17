@@ -12,7 +12,7 @@ import Foundation
 // All CaseIterable so they can be looped through to create the UI
 
 struct Pizza {
-    var name: PizzaName = .magharita
+    var name: PizzaName = .margherita
     var size: PizzaSize = .medium
     var crust: PizzaCrust = .standard
 
@@ -22,7 +22,7 @@ struct Pizza {
 }
 
 enum PizzaName: String, CaseIterable {
-    case magharita, hawaiian, pepperoni, vegetarian, seafood, mushroom
+    case margherita, hawaiian, pepperoni, vegetarian, seafood, mushroom
 }
 
 enum PizzaSize: String, CaseIterable {
