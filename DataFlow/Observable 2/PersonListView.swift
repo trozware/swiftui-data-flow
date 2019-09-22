@@ -13,9 +13,6 @@ struct PersonListView: View {
     @ObservedObject var personList = PersonListModel()
 
     var body: some View {
-        // Embed List in NavigationView to test in isolation
-        // Getting here through ContentView provides the master NavView
-
         List {
             // To make the navigation link edits return to here,
             // the data sent must be a direct link to the ObservedObject
@@ -55,9 +52,15 @@ struct PersonListView: View {
     }
 }
 
+// To preview this with navigation, it must be embedded in a NavigationView
+// but the main ContentView provides the main NavigationView
+// so this view will only get its own when in Proview mode
+
 struct PersonList_Previews: PreviewProvider {
     static var previews: some View {
-        PersonListView()
+        NavigationView {
+            PersonListView()
+        }
     }
 }
 

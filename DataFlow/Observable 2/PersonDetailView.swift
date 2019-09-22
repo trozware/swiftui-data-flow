@@ -61,6 +61,8 @@ struct PersonDetailView: View {
 }
 
 // Previewing requires using .constant to convert the data to a binding
+// Sample data is generated in an extension in Preview Content
+
 struct PersonDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let person = PersonViewModel.samplePerson()

@@ -23,6 +23,7 @@
 		264C426D232CD3EE00058CE0 /* PersonListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426C232CD3EE00058CE0 /* PersonListModel.swift */; };
 		264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C426E232CD57D00058CE0 /* PersonListView.swift */; };
 		264C4271232CD87900058CE0 /* PersonDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 264C4270232CD87900058CE0 /* PersonDetailView.swift */; };
+		26834F892337544E0013D5DD /* PersonVMTestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26834F882337544E0013D5DD /* PersonVMTestData.swift */; };
 		26BDC7DD232DD34200C0A2D9 /* NestingViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC7DC232DD34200C0A2D9 /* NestingViews.swift */; };
 		26BDC7DF232DE63900C0A2D9 /* ChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC7DE232DE63900C0A2D9 /* ChildView.swift */; };
 		26BDC7E1232DE6CE00C0A2D9 /* GrandChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26BDC7E0232DE6CE00C0A2D9 /* GrandChildView.swift */; };
@@ -50,6 +51,7 @@
 		264C426C232CD3EE00058CE0 /* PersonListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListModel.swift; sourceTree = "<group>"; };
 		264C426E232CD57D00058CE0 /* PersonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonListView.swift; sourceTree = "<group>"; };
 		264C4270232CD87900058CE0 /* PersonDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailView.swift; sourceTree = "<group>"; };
+		26834F882337544E0013D5DD /* PersonVMTestData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonVMTestData.swift; sourceTree = "<group>"; };
 		26BDC7DC232DD34200C0A2D9 /* NestingViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NestingViews.swift; sourceTree = "<group>"; };
 		26BDC7DE232DE63900C0A2D9 /* ChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildView.swift; sourceTree = "<group>"; };
 		26BDC7E0232DE6CE00C0A2D9 /* GrandChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GrandChildView.swift; sourceTree = "<group>"; };
@@ -110,6 +112,7 @@
 			isa = PBXGroup;
 			children = (
 				263DF0B5232C7F41007635A4 /* Preview Assets.xcassets */,
+				26834F882337544E0013D5DD /* PersonVMTestData.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -247,6 +250,7 @@
 				264C426F232CD57D00058CE0 /* PersonListView.swift in Sources */,
 				263DF0AF232C7F3E007635A4 /* SceneDelegate.swift in Sources */,
 				263DF0B1232C7F3E007635A4 /* ContentView.swift in Sources */,
+				26834F892337544E0013D5DD /* PersonVMTestData.swift in Sources */,
 				2628DB0A232DE94D00049FFD /* CustomModifiers.swift in Sources */,
 				263DF0C3232C994B007635A4 /* Pizza.swift in Sources */,
 				264C4271232CD87900058CE0 /* PersonDetailView.swift in Sources */,
