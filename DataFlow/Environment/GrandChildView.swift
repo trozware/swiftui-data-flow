@@ -15,22 +15,27 @@ struct GrandChildView: View {
     @EnvironmentObject var userSettings: UserSettings
 
     var body: some View {
-        ZStack {
+        let imageName = userSettings.isLoggedIn
+            ? "person.crop.square"
+            : "questionmark.square"
+
+        let buttonText = userSettings.isLoggedIn
+            ? "Log Out"
+            : "Log In"
+
+        // because there is more than one statement in the body method
+        // the return keyword is needed to return the View
+        
+        return ZStack {
             Color.blue
 
             VStack {
-                if userSettings.isLoggedIn {
-                    Image(systemName: "person.crop.square").padding()
-                } else {
-                    Image(systemName: "questionmark.square").padding()
-                }
+                Image(systemName: imageName).padding()
 
                 // Toggling the environment object value changes
                 // all the views that use it
                 Button(action: { self.userSettings.isLoggedIn.toggle() }) {
-                    userSettings.isLoggedIn
-                        ? Text("Log Out").modifier(ButtonStyle())
-                        : Text("Log In").modifier(ButtonStyle())
+                    Text(buttonText).modifier(ButtonStyle())
                 }
             }
             .padding()

@@ -12,7 +12,12 @@ struct Numbers: View {
     @State private var stepperValue = 0
 
     var body: some View {
-        NumberChooser(stepperValue: $stepperValue)
+        VStack {
+            Text("Parent view value = \(stepperValue)")
+                .font(.title)
+
+            NumberChooser(stepperValue: $stepperValue)
+        }
     }
 }
 
@@ -35,7 +40,7 @@ struct NumberChooser: View {
             VStack {
                 // Using bound state from parent with 2-way binding
                 Stepper(value: $stepperValue, in: 0...20) {
-                    Text("Value = \(stepperValue)")
+                    Text("Value in child = \(stepperValue)")
                 }
                 .padding(50)
 

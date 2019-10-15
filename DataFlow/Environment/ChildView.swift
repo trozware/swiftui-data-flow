@@ -23,6 +23,7 @@ struct ChildView: View {
                 GrandChildView().padding()
             }
             .foregroundColor(.white)
+            .padding()
         }
     }
 }

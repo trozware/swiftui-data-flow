@@ -20,16 +20,18 @@ struct NestingViews: View {
             Color.yellow.edgesIgnoringSafeArea(.all)
 
             VStack {
-                userSettings.isLoggedIn
-                    ? Text("User Logged In")
-                    :  Text("User Logged Out")
+                Text(userSettings.isLoggedIn
+                    ? "User Logged In"
+                    : "User Logged Out")
+                    .padding()
+                    .font(.title)
 
                 // Button toggles value in environment object
                 Button(action: { self.userSettings.isLoggedIn.toggle() }) {
-                    userSettings.isLoggedIn
-                        ? Text("Log Out").modifier(ButtonStyle())
-                        : Text("Log In").modifier(ButtonStyle())
+                    Text(userSettings.isLoggedIn ? "Log Out" : "Log In")
+                        .modifier(ButtonStyle())
                 }
+                .padding()
 
                 Spacer()
                 

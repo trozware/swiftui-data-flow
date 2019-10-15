@@ -41,6 +41,9 @@ struct ColorSetView: View {
             // notice that this does not use $ as the ColorChooser
             // will get a reference to the ColorSet object
             ColorChooser(colorSet: self.colorSet)
+
+            // changes to this object get passed back automatically
+            // and used to update this view
         }
     }
 }
