@@ -15,10 +15,10 @@ struct PersonListView: View {
     var body: some View {
         List {
             // To make the navigation link edits return to here,
-            // the data sent must be a direct binding to an element
+            // the data sent must be a direct reference to an element
             // of the ObservedObject
 
-            ForEach(personList.persons.indices, id: \.self) { index in
+            ForEach(0 ..< personList.persons.count, id: \.self) { index in
                 NavigationLink(destination:
                     PersonDetailView(person: self.$personList.persons[index])
                 ) {
@@ -29,9 +29,9 @@ struct PersonListView: View {
                 // add this modifier to allow deleting from the list
                 self.personList.persons.remove(atOffsets: indexSet)
             }
-            .onMove { indicies, newOffset in
+            .onMove { indices, newOffset in
                 // add this modifier to allow moving in the list
-                self.personList.persons.move(fromOffsets: indicies, toOffset: newOffset)
+                self.personList.persons.move(fromOffsets: indices, toOffset: newOffset)
             }
         }
 
