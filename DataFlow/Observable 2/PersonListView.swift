@@ -16,7 +16,7 @@ struct PersonListView: View {
         List {
             // To make the navigation link edits return to here,
             // the data sent must be a direct reference to an element
-            // of the ObservedObject
+            // of the ObservedObject, not the closure parameter.
 
             ForEach(0 ..< personList.persons.count, id: \.self) { index in
                 NavigationLink(destination:

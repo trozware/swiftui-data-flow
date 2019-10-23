@@ -22,7 +22,6 @@ class PersonListModel: ObservableObject {
         guard let url = URL(string: address) else {
             fatalError("Bad data URL!")
         }
-        print("Fetching data")
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             guard let data = data, error == nil else {
