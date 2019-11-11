@@ -11,18 +11,21 @@ import SwiftUI
 struct PersonListView: View {
     // Using an ObservedObject for reference-based data (classes)
     @ObservedObject var personList = PersonListModel()
-
+    
     var body: some View {
         List {
             // To make the navigation link edits return to here,
             // the data sent must be a direct reference to an element
             // of the ObservedObject, not the closure parameter.
-
-            ForEach(0 ..< personList.persons.count, id: \.self) { index in
+            
+            // Thanks to Stewart Lynch (@StewartLynch) for suggesting using a function to
+            // get a binding to the person so it coud be passed to the detail view.
+            
+            ForEach(personList.persons) { person in
                 NavigationLink(destination:
-                    PersonDetailView(person: self.$personList.persons[index])
+                    PersonDetailView(person: self.selectedPerson(id: person.id))
                 ) {
-                    Text("\(self.personList.persons[index].first) \(self.personList.persons[index].last)")
+                    Text("\(person.first) \(person.last)")
                 }
             }
             .onDelete { indexSet in
@@ -34,10 +37,10 @@ struct PersonListView: View {
                 self.personList.persons.move(fromOffsets: indices, toOffset: newOffset)
             }
         }
-
+            
             // This runs when the view appears to load the initial data
             .onAppear(perform: { self.personList.fetchData() })
-
+            
             // set up the navigation bar details
             // EditButton() is a standard View
             .navigationBarTitle("People")
@@ -50,6 +53,13 @@ struct PersonListView: View {
                     EditButton()
                 }
         )
+    }
+    
+    func selectedPerson(id: UUID) -> Binding<PersonViewModel> {
+        guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
+            fatalError("This person does not exist.")
+        }
+        return self.$personList.persons[index]
     }
 }
 
