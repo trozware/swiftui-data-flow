@@ -21,9 +21,18 @@ struct PersonListView: View {
             // Thanks to Stewart Lynch (@StewartLynch) for suggesting using a function to
             // get a binding to the person so it coud be passed to the detail view.
             
+            // And now thanks to Vadim Shpakovski (@vadimshpakovski) for another option
+            // which does not rely on creating a binding to every person, but uses
+            // onReceive to react to changes to the person and trigger an update of personList.
+            // This will be faster for longer lists and feels more like how ObservedObject is meant to be used.
+            // Note that PersonDetailView has changed from using @Binding to @ObservedObject.
+
             ForEach(personList.persons) { person in
                 NavigationLink(destination:
-                    PersonDetailView(person: self.selectedPerson(id: person.id))
+                    PersonDetailView(person: person)
+                        .onReceive(person.objectWillChange) { _ in
+                            self.personList.objectWillChange.send()
+                        }
                 ) {
                     Text("\(person.first) \(person.last)")
                 }
@@ -53,13 +62,6 @@ struct PersonListView: View {
                     EditButton()
                 }
         )
-    }
-    
-    func selectedPerson(id: UUID) -> Binding<PersonViewModel> {
-        guard let index = self.personList.persons.firstIndex(where: { $0.id == id }) else {
-            fatalError("This person does not exist.")
-        }
-        return self.$personList.persons[index]
     }
 }
 

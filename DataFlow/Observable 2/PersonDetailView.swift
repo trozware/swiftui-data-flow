@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PersonDetailView: View {
     // Data passed from parent list view
-    @Binding var person: PersonViewModel
+    @ObservedObject var person: PersonViewModel
 
     // SwiftUI form with data fields
     // note the autocapitalization and keyboard modifiers
@@ -66,6 +66,6 @@ struct PersonDetailView: View {
 struct PersonDetailView_Previews: PreviewProvider {
     static var previews: some View {
         let person = PersonViewModel.samplePerson()
-        return PersonDetailView(person: .constant(person))
+        return PersonDetailView(person: person)
     }
 }
