@@ -26,24 +26,26 @@ struct PersonListView: View {
             // onReceive to react to changes to the person and trigger an update of personList.
             // This will be faster for longer lists and feels more like how ObservedObject is meant to be used.
             // Note that PersonDetailView has changed from using @Binding to @ObservedObject.
-
-            ForEach(personList.persons) { person in
-                NavigationLink(destination:
-                    PersonDetailView(person: person)
-                        .onReceive(person.objectWillChange) { _ in
-                            self.personList.objectWillChange.send()
-                        }
+            
+            // And a further update after receiving some more feedback which suggested
+            // that using @Binding was better as it means that the entire ForEach doid not have to be
+            // re-calcaulted afetr every change. But this uses a Dictionary to avoid Stewart's function.
+            
+            ForEach(personList.ids, id: \.self) { id in
+                NavigationLink(
+                    destination: PersonDetailView(person: self.$personList.persons[unchecked: id])
                 ) {
-                    Text("\(person.first) \(person.last)")
+                    Text("\(self.personList.persons[unchecked: id].first)") +
+                        Text(" \(self.personList.persons[unchecked: id].last)")
                 }
             }
             .onDelete { indexSet in
                 // add this modifier to allow deleting from the list
-                self.personList.persons.remove(atOffsets: indexSet)
+                self.personList.ids.remove(atOffsets: indexSet)
             }
             .onMove { indices, newOffset in
                 // add this modifier to allow moving in the list
-                self.personList.persons.move(fromOffsets: indices, toOffset: newOffset)
+                self.personList.ids.move(fromOffsets: indices, toOffset: newOffset)
             }
         }
             
@@ -63,6 +65,7 @@ struct PersonListView: View {
                 }
         )
     }
+    
 }
 
 // To preview this with navigation, it must be embedded in a NavigationView

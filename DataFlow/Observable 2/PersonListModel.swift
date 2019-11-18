@@ -12,11 +12,12 @@ class PersonListModel: ObservableObject {
     // Main list view model
     // ObservableObject so that updates are detected
     
-    @Published var persons: [PersonViewModel] = []
+    @Published var ids: [UUID] = []
+    @Published var persons: [UUID : PersonViewModel] = [:]
 
     func fetchData() {
         // avoid too many calls to the API
-        if persons.count > 0 { return }
+        if ids.count > 0 { return }
 
         let address = "https://next.json-generator.com/api/json/get/VyQroKB8P?indent=2"
         guard let url = URL(string: address) else {
@@ -34,9 +35,13 @@ class PersonListModel: ObservableObject {
                 jsonDecoder.dateDecodingStrategy = .iso8601
                 let dataArray = try jsonDecoder.decode([PersonModel].self, from: data)
                 DispatchQueue.main.async {
-                    self.persons = dataArray.map { PersonViewModel(with: $0) }.sorted() {
+                    let personViewModels = dataArray.map { PersonViewModel(with: $0) }.sorted() {
                         $0.last + $0.first < $1.last + $1.first
                     }
+                    self.ids = personViewModels.map { $0.id }
+                    self.persons = Dictionary(
+                        uniqueKeysWithValues: personViewModels.map { ($0.id, $0) }
+                    )
                 }
             } catch {
                 print(error)
@@ -45,12 +50,15 @@ class PersonListModel: ObservableObject {
     }
 
     func refreshData() {
-        persons = []
+        ids = []
+        persons = [:]
         fetchData()
     }
+    
 }
 
 class PersonViewModel: Identifiable, ObservableObject {
+    
     // Main model for use as ObservableObject
     // Derived from JSON via basic model
 
@@ -78,6 +86,9 @@ class PersonViewModel: Identifiable, ObservableObject {
         self.zip = person.zip
         self.registered = person.registered
     }
+    
+    init() { }
+
 }
 
 struct PersonModel: Codable {
@@ -108,5 +119,21 @@ struct PersonModel: Codable {
         city = addressComponents[1]
         state = addressComponents[2]
         zip = addressComponents[3]
+    }
+}
+
+// Extension to force un-wrap a Dictionary value which is normally an optional.
+// This is so it can be used to create a Binding.
+extension Dictionary where Key == UUID, Value == PersonViewModel {
+    subscript(unchecked key: Key) -> Value {
+        get {
+            guard let result = self[key] else {
+                fatalError("This person does not exist.")
+            }
+            return result
+        }
+        set {
+            self[key] = newValue
+        }
     }
 }

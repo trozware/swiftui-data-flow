@@ -35,11 +35,11 @@ struct ContentView: View {
                 }
 
                 NavigationLink(destination: PersonListView()) {
-                    ListContents(title: "ObservableObject 2", imageNumber: 5)
+                    ListContents(title: "ObservableObject 2", imageNumber: 6)
                 }
                 
                 NavigationLink(destination: NestingViews().environmentObject(UserSettings())) {
-                    ListContents(title: "@EnvironmentObject", imageNumber: 6)
+                    ListContents(title: "@EnvironmentObject", imageNumber: 7)
                 }
             }
             .navigationBarTitle("Examples")

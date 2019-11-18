@@ -29,7 +29,7 @@ struct NestingViews: View {
                 // Button toggles value in environment object
                 Button(action: { self.userSettings.isLoggedIn.toggle() }) {
                     Text(userSettings.isLoggedIn ? "Log Out" : "Log In")
-                        .modifier(ButtonStyle())
+                        .modifier(GrayButtonStyle())
                 }
                 .padding()
 
