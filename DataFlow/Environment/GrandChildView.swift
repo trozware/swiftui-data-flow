@@ -34,7 +34,7 @@ struct GrandChildView: View {
 
                 // Toggling the environment object value changes
                 // all the views that use it
-                Button(action: { self.userSettings.isLoggedIn.toggle() }) {
+                Button(action: { userSettings.isLoggedIn.toggle() }) {
                     Text(buttonText).modifier(GrayButtonStyle())
                 }
             }

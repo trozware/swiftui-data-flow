@@ -44,8 +44,8 @@ struct PizzaNamePicker: View {
     var body: some View {
         Section(header: Text("Select your pizza:").font(.headline)) {
             List(PizzaName.allCases, id: \.self) { pizzaName in
-                Button(action: { self.selectedPizzaName = pizzaName }) {
-                    PizzaNamePickerRow(selectedPizzaName: self.$selectedPizzaName,
+                Button(action: { selectedPizzaName = pizzaName }) {
+                    PizzaNamePickerRow(selectedPizzaName: selectedPizzaName,
                                        pizzaName: pizzaName)
                 }
             }
@@ -58,14 +58,14 @@ struct PizzaNamePickerRow: View {
     // still using 2-way binding for the selected pizza name
     // and gets a property for the name to display
     
-    @Binding var selectedPizzaName: PizzaName
+    let selectedPizzaName: PizzaName
     let pizzaName: PizzaName
 
     var body: some View {
         HStack {
             Text(pizzaName.rawValue.capitalized)
             Spacer()
-            if pizzaName == self.selectedPizzaName {
+            if pizzaName == selectedPizzaName {
                 Image(systemName: "checkmark")
             }
         }

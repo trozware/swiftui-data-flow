@@ -27,7 +27,7 @@ struct ColorSetView: View {
             VStack {
                 Spacer()
 
-                Button(action: { self.showChooser = true }) {
+                Button(action: { showChooser = true }) {
                     Text("Change Colors")
                         .frame(width: 170, height: 50)
                         .background(Color.blue)
@@ -40,7 +40,7 @@ struct ColorSetView: View {
             // present the sheet, passing the ObservedObject
             // notice that this does not use $ as the ColorChooser
             // will get a reference to the ColorSet object
-            ColorChooser(colorSet: self.colorSet)
+            ColorChooser(colorSet: colorSet)
 
             // changes to this object get passed back automatically
             // and used to update this view

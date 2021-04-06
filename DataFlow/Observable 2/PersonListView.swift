@@ -33,31 +33,31 @@ struct PersonListView: View {
             
             ForEach(personList.ids, id: \.self) { id in
                 NavigationLink(
-                    destination: PersonDetailView(person: self.$personList.persons[unchecked: id])
+                    destination: PersonDetailView(person: $personList.persons[unchecked: id])
                 ) {
-                    Text("\(self.personList.persons[unchecked: id].first)") +
-                        Text(" \(self.personList.persons[unchecked: id].last)")
+                    Text("\(personList.persons[unchecked: id].first)") +
+                        Text(" \(personList.persons[unchecked: id].last)")
                 }
             }
             .onDelete { indexSet in
                 // add this modifier to allow deleting from the list
-                self.personList.ids.remove(atOffsets: indexSet)
+                personList.ids.remove(atOffsets: indexSet)
             }
             .onMove { indices, newOffset in
                 // add this modifier to allow moving in the list
-                self.personList.ids.move(fromOffsets: indices, toOffset: newOffset)
+                personList.ids.move(fromOffsets: indices, toOffset: newOffset)
             }
         }
             
             // This runs when the view appears to load the initial data
-            .onAppear(perform: { self.personList.fetchData() })
+            .onAppear(perform: { personList.fetchData() })
             
             // set up the navigation bar details
             // EditButton() is a standard View
             .navigationBarTitle("People")
             .navigationBarItems(trailing:
                 HStack {
-                    Button(action: { self.personList.refreshData() }) {
+                    Button(action: { personList.refreshData() }) {
                         Image(systemName: "arrow.clockwise")
                     }
                     Spacer().frame(width: 30)

@@ -27,7 +27,7 @@ struct NestingViews: View {
                     .font(.title)
 
                 // Button toggles value in environment object
-                Button(action: { self.userSettings.isLoggedIn.toggle() }) {
+                Button(action: { userSettings.isLoggedIn.toggle() }) {
                     Text(userSettings.isLoggedIn ? "Log Out" : "Log In")
                         .modifier(GrayButtonStyle())
                 }

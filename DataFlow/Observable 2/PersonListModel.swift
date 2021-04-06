@@ -54,7 +54,6 @@ class PersonListModel: ObservableObject {
         persons = [:]
         fetchData()
     }
-    
 }
 
 class PersonViewModel: Identifiable, ObservableObject {
@@ -66,14 +65,14 @@ class PersonViewModel: Identifiable, ObservableObject {
     // it must be an ObservableObject for the data flow to work
 
     var id = UUID()
-    @Published var first: String = ""
-    @Published var last: String = ""
-    @Published var phone: String = ""
-    @Published var address: String = ""
-    @Published var city: String = ""
-    @Published var state: String = ""
-    @Published var zip: String = ""
-    @Published var registered: Date = Date()
+    var first: String = ""
+    var last: String = ""
+    var phone: String = ""
+    var address: String = ""
+    var city: String = ""
+    var state: String = ""
+    var zip: String = ""
+    var registered: Date = Date()
 
     init(with person: PersonModel) {
         self.id = person.id
