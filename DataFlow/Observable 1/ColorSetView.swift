@@ -10,7 +10,7 @@ import SwiftUI
 
 struct ColorSetView: View {
     // Using an ObservedObject for reference-based data (classes)
-    @ObservedObject private var colorSet = ColorSet()
+    @StateObject private var colorSet = ColorSet()
 
     // @State property to control when chooser is displayed
     @State private var showChooser = false

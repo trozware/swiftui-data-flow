@@ -10,7 +10,7 @@ import SwiftUI
 
 struct PersonListView: View {
     // Using an ObservedObject for reference-based data (classes)
-    @ObservedObject var personList = PersonListModel()
+    @StateObject var personList = PersonListModel()
     
     var body: some View {
         List {
